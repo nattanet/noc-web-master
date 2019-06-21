@@ -101,7 +101,7 @@ class AiForm extends React.Component {
             <br />
             <br />
             <br />
-            <label style={ {fontSize :30 ,color : 'black' ,marginLeft: 80 }}>Action Item Form   /></label>
+            <label style={ {fontSize :30 ,color : 'black' ,marginLeft: 80 }}>Action Item Form   </label>
             <br />
             <label style={{fontSize : 20 ,color : 'black' ,marginLeft: 80}}>Click<a href="/aiboard/"> Here</a> for AI board</label>
          

@@ -26,9 +26,23 @@ class OverallTable extends React.Component {
         super(props);
         this.state = {
             data: [],
+            searchString: "",
         };
        
     }
+    componentDidMount() {
+        this.setState({
+            data: data
+        });
+        this.refs.search.focus();
+    }
+
+    handleChange() {
+        this.setState({
+            searchString: this.refs.search.value
+        });
+    }
+   
     
 
     render() {
@@ -84,7 +98,7 @@ class OverallTable extends React.Component {
             <div>
                
                 <br />
-                <Table  columns={columns} dataSource={data}  bordered width = {30} pagination = {false} style={{ width: 1200 }}  />
+                <Table  columns={columns} dataSource={data}  bordered width = {30} pagination = {false} style={{ width: 1200 ,marginLeft: 300}}  />
             </div>
         )
 

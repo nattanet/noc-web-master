@@ -10,6 +10,7 @@ import GinNumber from './page/GinNumber';
 import ReportSummary from './page/ReportSummary';
 import GinRequestForm from './page/GinRequestForm';
 import AiForm from './components/Form/AiForm';
+import Login from './page/Login';
 
 
 
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path='/reportsummary' component={ReportSummary}/>
           <Route path='/GinRequestForm' component={GinRequestForm}/>
           <Route path='/AIForm' component={AiForm}/>
+          <Route path='/Login' component={Login}/>
 
           
         </div>

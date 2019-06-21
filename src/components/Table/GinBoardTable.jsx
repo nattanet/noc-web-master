@@ -76,14 +76,7 @@ class GinBoardTable extends React.Component {
                 render: gin_id => (
                     <span>
                       <a href="/ginnumform/">
-                       
-                       
-                        <Tag  color= "#69C4B2" key={gin_id}>
-                        
-                        {gin_id.toUpperCase()}
-                        </Tag> 
-                      
-                        </a>
+                        <Tag  color= "#69C4B2" key={gin_id}> {gin_id.toUpperCase()}</Tag> </a>
                     </span>
                 ),
             },
@@ -125,6 +118,14 @@ class GinBoardTable extends React.Component {
             {
                 title: 'Status',
                 dataIndex: 'status',
+            },
+            {
+                title: 'Type',
+                dataIndex: 'type',
+            },
+            {
+                title: 'Service',
+                dataIndex: 'service',
             },
             {
                 title: 'Impact',
@@ -169,7 +170,12 @@ class GinBoardTable extends React.Component {
             {
                 title: 'Incident Log',
                 dataIndex: 'incident_log',
-                width : 4
+                width : 4,
+                render: incident_log => (
+                    <span>
+                        <Tag  color= "#69C4B2" > i</Tag> 
+                    </span>
+                ),
             },
         ];
 

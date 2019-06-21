@@ -75,9 +75,11 @@ class AiBoardTable extends React.Component {
                 width: 8,
                 render: gin_id => (
                     <span>
+                         <a href="/ginnumform/">
                         <Tag color= "#69C4B2" key={gin_id}>
                         {gin_id.toUpperCase()}
                         </Tag> 
+                        </a>
                     </span>
                 ),
             },
@@ -92,8 +94,6 @@ class AiBoardTable extends React.Component {
                         </Tag> 
                         </a>
                     </span>)
-               
-
             },
             {
                 title: 'Fin Title',

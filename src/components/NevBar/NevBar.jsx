@@ -46,6 +46,7 @@ export default class NevBar extends React.Component {
             <Menu.Item key="setting:2">View incident driver</Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
+        <Menu.Item key="Signin"><a href="/Login"/><Icon type="bars" />Sign in</Menu.Item>
       </Menu>
     );
   }

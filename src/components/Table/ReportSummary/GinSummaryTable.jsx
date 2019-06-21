@@ -48,15 +48,13 @@ class GinSummaryTable extends React.Component {
               
             },
             
-                   
-                
         ];
 
         return (
             <div>
                
                 <br />
-                <Table  columns={columns} dataSource={data} pagination = {false} style={{ width: 500 }}  />
+                <Table  columns={columns} dataSource={data} pagination = {false} style={{ width: 500 ,marginLeft: 300}}  />
             </div>
         )
 
