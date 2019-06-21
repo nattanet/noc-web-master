@@ -18,32 +18,31 @@ export class Login extends React.Component {
     render() {
      
       return (
+          <div>
+    <label style={ {fontSize :30 ,color : 'black' ,marginLeft: 780 }}>Welcome   </label>
         <Form onSubmit={this.handleSubmit} className="login-form">
           <Form.Item>
-              <Input style={{ width : 200,marginLeft : 500 }} 
+              <Input style={{ width : 300,marginLeft : 700 }} 
                 prefix={<Icon type="user" />}
                 placeholder="Username"
               />
           </Form.Item>
           <Form.Item>
-              <Input style={{ width : 200 ,marginLeft : 500}} 
+              <Input style={{ width : 300 ,marginLeft : 700}} 
                 prefix={<Icon type="lock" />}
                 type="password"
                 placeholder="Password"
               />
           
           </Form.Item>
-          <Form.Item>
-            <Checkbox>Remember me</Checkbox>)}
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
-            <Button type="primary" htmlType="submit" className="login-form-button">
+         
+            <Button  style={{ width : 200 ,marginLeft : 750}} 
+                     type="primary" htmlType="submit" className="login-form-button">
               Log in
             </Button>
-            Or <a href="">register now!</a>
-          </Form.Item>
+           
         </Form>
+        </div>
       );
     }
   }
