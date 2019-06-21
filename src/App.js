@@ -28,7 +28,7 @@ class App extends Component {
           <Route path='/pendingrequest' component={PendingRequest} />
           <Route path='/ginnumform' component={GinNumber}/>
           <Route path='/reportsummary' component={ReportSummary}/>
-          <Route path='/GinRequestForm' component={GinRequestForm}/>
+          <Route path='/GinRequestFor' component={GinRequestForm}/>
           
         </div>
       </BrowserRouter>
