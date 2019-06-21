@@ -9,6 +9,7 @@ import GinNumberForm  from './components/Form/GinNumberForm';
 import GinNumber from './page/GinNumber';
 import ReportSummary from './page/ReportSummary';
 import GinRequestForm from './page/GinRequestForm';
+import AiForm from './components/Form/AiForm';
 
 
 
@@ -28,7 +29,9 @@ class App extends Component {
           <Route path='/pendingrequest' component={PendingRequest} />
           <Route path='/ginnumform' component={GinNumber}/>
           <Route path='/reportsummary' component={ReportSummary}/>
-          <Route path='/GinRequestFor' component={GinRequestForm}/>
+          <Route path='/GinRequestForm' component={GinRequestForm}/>
+          <Route path='/AIForm' component={AiForm}/>
+
           
         </div>
       </BrowserRouter>

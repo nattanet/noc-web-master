@@ -15,7 +15,7 @@ class DatePick extends React.Component {
   render(){
     return (
      
-      <DatePicker onChangeDate={onChangeDate} />
+      <DatePicker />
       
     );
   }

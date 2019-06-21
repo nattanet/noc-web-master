@@ -180,7 +180,7 @@ class GinBoardTable extends React.Component {
         return (
             <div>
                 <input 
-                    className = "Searchpos"
+                    style={{ marginLeft : 1250 }}
                     type="text"
                     value={this.state.searchString}
                     ref="search"

@@ -7,15 +7,16 @@ import '../css/Position.css'
 export const data = [
     {
         gin_id: "24674",
-        title: "egestas@justonecante.org"
+        ai_number : '1',
+
     },
     {
         gin_id: "24673",
-        title: "erat.eget.tincidunt@idsapienCras.org"
+        ai_number : '2',
     },
     {
         gin_id: "24672",
-        title: "Nam.ligula@quamvel.net"
+        ai_number : '3',
     },
 ];
 
@@ -83,6 +84,14 @@ class AiBoardTable extends React.Component {
             {
                 title: 'AI Number',
                 dataIndex: 'ai_number',
+                render: ai_number => (
+                    <span>
+                      <a href="/AIForm/">
+                        <Tag  color= "#69C4B2" key={ai_number}>
+                        {ai_number.toUpperCase()}
+                        </Tag> 
+                        </a>
+                    </span>)
                
 
             },

@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { Form, Input, Select, Checkbox, Row, Col ,InputNumber} from 'antd';
+import { Form, Input, Select, Checkbox, Row, Col, InputNumber } from 'antd';
 import '../css/Position.css'
 import ITList from './ITList';
 import NonITList from './NonITList';
-
-
-
+import { data } from '../Table/GinBoardTable';
 
 const { Option } = Select;
 const { TextArea } = Input;
-
-
 
 class GinNumberForm extends React.Component {
     constructor(props) {
@@ -24,31 +20,31 @@ class GinNumberForm extends React.Component {
             channel: '',
             type: '',
             warroom: false,
-            services : '',
-            MoveTraffic : '',
-            Severity : '',
-            DetectionMethod : '',
-            DataCenter : [],
-            IncidentOwner : '',
-            Team : '',
-            Manager : '',
-            LostBookings : 0,
-            NonITLostBookings : 0,
-            CEGDowntime : 0.0,
-            ImpactSummary : '',
-            Detail : '',
-            GinRequester : '',
-            LessonsLearned : false,
-            EmergencyAccess : false,
+            services: '',
+            MoveTraffic: '',
+            Severity: '',
+            DetectionMethod: '',
+            DataCenter: [],
+            IncidentOwner: '',
+            Team: '',
+            Manager: '',
+            LostBookings: 0,
+            NonITLostBookings: 0,
+            CEGDowntime: 0.0,
+            ImpactSummary: '',
+            Detail: '',
+            GinRequester: '',
+            LessonsLearned: false,
+            EmergencyAccess: false,
             ITMailList: [],
             NonITMailingList: [],
-            AdditionalEmail : '',
-            Type_2 : '',
-            Area : '',
-            Product : '',
-            Application : '',
+            AdditionalEmail: '',
+            Type_2: '',
+            Area: '',
+            Product: '',
+            Application: '',
             indeterminate: true,
-            Solution : '',
+            Solution: '',
             formLayout: 'horizontal'
         };
         this.handleChange = this.handleChange.bind(this);
@@ -66,7 +62,7 @@ class GinNumberForm extends React.Component {
         this.handleChangeLostBookings = this.handleChangeLostBookings.bind(this);
         this.handleChangeNonITLostBookings = this.handleChangeNonITLostBookings.bind(this);
         this.handleChangeNonITLostBookings = this.handleChangeNonITLostBookings.bind(this);
-        this.handleChangeCEGDowntime  = this.handleChangeCEGDowntime .bind(this);
+        this.handleChangeCEGDowntime = this.handleChangeCEGDowntime.bind(this);
         this.handleChangeDetail = this.handleChangeDetail.bind(this);
         this.handleChangeGinRequester = this.handleChangeGinRequester.bind(this);
         this.handleCheckLessonsLearned = this.handleCheckLessonsLearned.bind(this);
@@ -139,15 +135,15 @@ class GinNumberForm extends React.Component {
         );
     }
     handleChangeLostBookings = (value) => {
-        this.setState({LostBookings: value}
+        this.setState({ LostBookings: value }
         );
     }
     handleChangeNonITLostBookings = (value) => {
-        this.setState({NonITLostBookings: value}
+        this.setState({ NonITLostBookings: value }
         );
     }
     handleChangeCEGDowntime = (value) => {
-        this.setState({CEGDowntime: value}
+        this.setState({ CEGDowntime: value }
         );
     }
     handleChangeImpactSummary(event) {
@@ -201,7 +197,7 @@ class GinNumberForm extends React.Component {
         );
     }
     handleChangeSolution(event) {
-        this.setState({ Solution : event.target.value }
+        this.setState({ Solution: event.target.value }
         );
     }
 
@@ -217,9 +213,11 @@ class GinNumberForm extends React.Component {
         const { formLayout } = this.state;
         const formItemLayout =
             formLayout === 'inline'
-
+       
         return (
-            <Form layout="inline" className="GinFormpos" onSubmit={this.handleSubmit}>
+            <div>
+            <label style={ {fontSize :30 ,color : 'black' ,marginLeft: 80 }}>Gin Number :  {data[1].gin_id} </label>
+            <Form layout="inline" style={{ marginLeft: 350 }} onSubmit={this.handleSubmit}>
                 <Row >
                     <Col span={100}>
                         <Form.Item >
@@ -240,14 +238,10 @@ class GinNumberForm extends React.Component {
 
                     <Form.Item><label className="black-text" >Create slack :   </label>
                         <Checkbox value="createslack" onChange={this.handleCheckCreatSlack} ></Checkbox></Form.Item>
-                </Row>
-                <br />
-                <Row>
                     <Form.Item label="Channel Name: " >
-                        <Input style={{ width: 650 }} value={this.state.channel} onChange={this.handleChangeChannel} />
+                        <Input style={{ width: 620 }} value={this.state.channel} onChange={this.handleChangeChannel} />
                     </Form.Item>
                 </Row>
-
                 <br />
                 <Row>
                     <Form.Item label="Type: " layout={formLayout}>
@@ -269,7 +263,7 @@ class GinNumberForm extends React.Component {
                     </Form.Item>
 
                     <Form.Item><label className="black-text" >Move Traffic :   </label>
-                        <Checkbox value="move_traffic"  onChange={this.handleCheckMoveTraffic}></Checkbox></Form.Item>
+                        <Checkbox value="move_traffic" onChange={this.handleCheckMoveTraffic}></Checkbox></Form.Item>
                 </Row>
 
                 <br />
@@ -329,35 +323,35 @@ class GinNumberForm extends React.Component {
                 <Row>
 
                     <Form.Item label="Lost Bookings: " >
-                        <InputNumber style={{ width: 100 }} placeholder="0" value={this.state.LostBookings} onChange={this.handleChangeLostBookings}/>
+                        <InputNumber style={{ width: 100 }} placeholder="0" value={this.state.LostBookings} onChange={this.handleChangeLostBookings} />
                     </Form.Item>
 
                     <Form.Item label="Lost Bookings (Non IT): " >
-                        <InputNumber  style={{ width: 100 }} placeholder="0" value={this.state.NonITLostBookings} onChange={this.handleChangeNonITLostBookings}/>
+                        <InputNumber style={{ width: 100 }} placeholder="0" value={this.state.NonITLostBookings} onChange={this.handleChangeNonITLostBookings} />
                     </Form.Item>
 
                     <Form.Item label="CEG Downtime (min): " >
-                        <InputNumber  style={{ width: 100 }} placeholder="0.0" value={this.state.CEGDowntime} onChange={this.handleChangeCEGDowntime}/>
+                        <InputNumber style={{ width: 100 }} placeholder="0.0" value={this.state.CEGDowntime} onChange={this.handleChangeCEGDowntime} />
                     </Form.Item>
                 </Row>
                 <Row>
                     <Form.Item >
                         <label className="black-text" >Impact Summary :   </label>
                         <br />
-                        <TextArea style={{ width: 1000, height: 100 }} placeholder="" value={this.state.ImpactSummary} onChange={this.handleChangeImpactSummary}/>
+                        <TextArea style={{ width: 1000, height: 100 }} placeholder="" value={this.state.ImpactSummary} onChange={this.handleChangeImpactSummary} />
                     </Form.Item>
                 </Row>
                 <Row>
                     <Form.Item >
                         <label className="black-text" >Detail :   </label>
                         <br />
-                        <TextArea style={{ width: 1000, height: 100 }} placeholder="" value={this.state.Detail} onChange={this.handleChangeDetail}/>
+                        <TextArea style={{ width: 1000, height: 100 }} placeholder="" value={this.state.Detail} onChange={this.handleChangeDetail} />
                     </Form.Item>
                 </Row>
 
                 <Row>
                     <Col span={8}><Form.Item label="GIN Requester: " >
-                        <Input style={{ width: 100 }} placeholder="Saowaluck" value={this.state.GinRequester} onChange={this.handleChangeGinRequester}/>
+                        <Input style={{ width: 100 }} placeholder="Saowaluck" value={this.state.GinRequester} onChange={this.handleChangeGinRequester} />
                     </Form.Item></Col>
 
                     <Col span={3}><label className="black-text" >GIN Stake holder:  </label></Col>
@@ -367,7 +361,7 @@ class GinNumberForm extends React.Component {
 
                 <Row>
                     <Col span={8}><Form.Item>
-                        <Checkbox  onChange={this.handleCheckLessonsLearned}></Checkbox>
+                        <Checkbox onChange={this.handleCheckLessonsLearned}></Checkbox>
                         <label className="black-text" >Lessons Learned </label>
                     </Form.Item></Col>
                     <Col span={8}><Form.Item>
@@ -397,30 +391,30 @@ class GinNumberForm extends React.Component {
                 </Row>
                 <br />
                 <label className="green-text" > Root Cause</label>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <Row>
                     <Col span={8}><label className="red-text" > Type:</label></Col>
                     <Col span={8}><label className="red-text" > Area:</label></Col>
                     <Col span={8}><label className="red-text" > Product:</label></Col>
                 </Row>
-               
+
                 <Row>
-               
+
                     <Col span={8}><Form.Item >
-                        <Select defaultValue="Investigating" style={{ width: 300 }}  onChange={this.handleSelectType2}>
+                        <Select defaultValue="Investigating" style={{ width: 300 }} value={this.state.Type_2} onChange={this.handleSelectType2}>
                             <Option value="Investigating">Invest</Option>
                         </Select>
                     </Form.Item></Col>
 
                     <Col span={8}><Form.Item >
-                        <Select defaultValue="Investigating" style={{ width: 300 }} onChange={this.handleSelectArea}>
+                        <Select defaultValue="Investigating" style={{ width: 300 }} value={this.state.Area} onChange={this.handleSelectArea}>
                             <Option value="Investigating">Investigating</Option>
                         </Select>
                     </Form.Item></Col>
 
                     <Col span={8}><Form.Item >
-                        <Select defaultValue="Investigating" style={{ width: 300 }} onChange={this.handleSelectProduct}>
+                        <Select defaultValue="Investigating" style={{ width: 300 }} value={this.state.Product} onChange={this.handleSelectProduct}>
                             <Option value="Investigating">Investigating</Option>
                         </Select>
                     </Form.Item></Col>
@@ -434,27 +428,24 @@ class GinNumberForm extends React.Component {
                         </Select>
                     </Form.Item></Col>
                 </Row>
-                <br/>
-               
+                <br />
+
                 <label className="red-text" > Root Cause Detail:</label>
                 <br />
-                    <Form.Item >
-                        <TextArea style={{ width: 1000, height: 70 }} placeholder="" value={this.state.RootCauseDetail} onChange={this.handleChangeRootCauseDetail}/>
-                    </Form.Item>
-                    <br/>
-               
-               <label className="red-text" > Solution:</label>
-               <br />
-                   <Form.Item >
-                       <TextArea style={{ width: 1000, height: 70 }} placeholder="" value={this.state.Solution} onChange={this.handleChangeSolution} />
-                   </Form.Item>
+                <Form.Item >
+                    <TextArea style={{ width: 1000, height: 70 }} placeholder="" value={this.state.RootCauseDetail} onChange={this.handleChangeRootCauseDetail} />
+                </Form.Item>
                 <br />
 
-
-
-
+                <label className="red-text" > Solution:</label>
+                <br />
+                <Form.Item >
+                    <TextArea style={{ width: 1000, height: 70 }} placeholder="" value={this.state.Solution} onChange={this.handleChangeSolution} />
+                </Form.Item>
+                <br />
                 <button type="submit">submit</button>
             </Form >
+            </div>
 
 
         );
