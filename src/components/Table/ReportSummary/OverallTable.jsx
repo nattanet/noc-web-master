@@ -26,25 +26,11 @@ class OverallTable extends React.Component {
         super(props);
         this.state = {
             data: [],
-            searchString: "",
+            
         };
        
     }
-    componentDidMount() {
-        this.setState({
-            data: data
-        });
-        this.refs.search.focus();
-    }
-
-    handleChange() {
-        this.setState({
-            searchString: this.refs.search.value
-        });
-    }
-   
     
-
     render() {
         const columns = [
             {

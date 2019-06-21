@@ -10,8 +10,6 @@ class AiBoard extends React.Component{
                 <AiBoardTable />
                 <br /> 
             </div>
-      
-        
         );
     }
 }

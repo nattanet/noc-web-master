@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { Form, Input, Select, Checkbox, Row, Col,Card } from 'antd';
+import { Form, Input, Select, Checkbox, Row, Col,Card ,Radio,DatePicker} from 'antd';
 import '../css/Position.css'
 import DatePick from '../DatePicker/DatePicker';
 import TimePick from '../DatePicker/TimePicker1';
@@ -10,9 +10,10 @@ import NonITList from './NonITList';
 import AiForm from './AiForm';
 
 
-
 const { Option } = Select;
 const { TextArea } = Input;
+
+
 
 class PlannedGinRequestForm extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class PlannedGinRequestForm extends React.Component {
             ImpactSummary: '',
             formLayout: 'horizontal',
             DataCenter: [],
-            PlannedStartDate: '',
+            PlannedStartDate: null,
             GinDetail: '',
             RequesterName : '',
             Team : '',
@@ -32,6 +33,7 @@ class PlannedGinRequestForm extends React.Component {
             StakeHolderName : '',
             AllItList : [],
             AllNonItList : [],
+            MoveTraffic : '',
         };
         this.handleChangeGinTitle = this.handleChangeGinTitle.bind(this);
         this.handleCheckDataCenter = this.handleCheckDataCenter.bind(this);
@@ -47,10 +49,8 @@ class PlannedGinRequestForm extends React.Component {
         this.handleChangeStakeHolderName = this.handleChangeStakeHolderName.bind(this);
         this.handleCheckAllItList = this.handleCheckAllItList.bind(this);
         this.handleCheckAllNonItList = this.handleCheckAllNonItList.bind(this);
-
+        this.handleSelectMoveTraffic = this.handleSelectMoveTraffic.bind(this);
        
-
-
     }
     render() {
         return <AiForm GinTitle={this.state.GinTitle} />;
@@ -78,13 +78,17 @@ class PlannedGinRequestForm extends React.Component {
         this.setState({ DataCenter: value }
         );
     };
-    handleChangePlannedStartDate(date) {
-        this.setState({ PlannedStartDate: date }
+
+    handleChangePlannedStartDate(value) {
+        this.setState({ PlannedStartDate: value }
         );
     }
-    handleChangePlannedStartDate = value => {
-        this.setState({ PlannedStartDate: value })
-    };
+    handleChangePlannedStartDate(value) {
+       this.setState({PlannedStartDate : value});
+      }
+    
+  
+
     handleChangeGinDetail(event) {
         this.setState({ GinDetail: event.target.value }
         );
@@ -114,6 +118,10 @@ class PlannedGinRequestForm extends React.Component {
         this.setState({ AllNonItList: value }
         );
     };
+    handleSelectMoveTraffic(event) {
+        this.setState({ MoveTraffic: event.target.value }
+        );
+    }
 
 
 
@@ -211,14 +219,14 @@ class PlannedGinRequestForm extends React.Component {
                 <br />
                 <Row>
                     <Col span={3}> <label className="black-text" >Planned Start Date :   </label></Col>
-                    <Col span={7}><DatePick value={this.state.PlannedStartDate} onChange={this.handleChangePlannedStartDate} /></Col>
+                    <Col span={7}><DatePicker onChange={this.handleChangePlannedStartDate} value = {this.state.PlannedStartDate} /></Col>
                     <Col span={2}> <label className="black-text" >Time :   </label></Col>
                     <Col span={5}><TimePick /></Col>
                 </Row>
                 <br />
                 <Row>
                     <Col span={3}> <label className="black-text" >Planned Finish Date :   </label></Col>
-                    <Col span={7}><DatePick value={this.state.PlannedStartDate} onChange={this.handleChangePlannedStartDate} /></Col>
+                    <Col span={7}><DatePick /></Col>
                     <Col span={2}> <label className="black-text" >Time :   </label></Col>
                     <Col span={5}><TimePick /></Col>
                 </Row>
@@ -231,11 +239,12 @@ class PlannedGinRequestForm extends React.Component {
                 </Row>
                 <br/>
                 <Row>
-                    <label className="black-text" >Traffic Movie :   </label>
-                    <Checkbox.Group style={{ width: 800 }} onChange={this.handleCheckDataCenter}>
-                        <Col span={4}><Checkbox value="Yes">Yes</Checkbox> </Col>
-                        <Col span={4}><Checkbox value="No">No</Checkbox></Col>
-                    </Checkbox.Group>
+                    <label className="black-text" >Traffic Move :   </label>
+                    <Radio.Group onChange={this.handleSelectMoveTraffic} value={this.state.MoveTraffic}>
+                        <Radio value="Yes">Yes</Radio>
+                        <Radio value="No">No</Radio>
+                    </Radio.Group>
+
                 </Row>
                 <br />
                 <Row >
