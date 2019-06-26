@@ -1,12 +1,5 @@
-import React, { Children } from 'react';
-import { Table, Badge, Menu, Dropdown, Icon, Button } from 'antd';
-
-const menu = (
-    <Menu>
-        <Menu.Item>Action 1</Menu.Item>
-        <Menu.Item>Action 2</Menu.Item>
-    </Menu>
-);
+import React from 'react';
+import { Table,  Menu,  Button } from 'antd';
 
 
 const data = [

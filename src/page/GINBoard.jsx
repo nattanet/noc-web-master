@@ -4,6 +4,11 @@ import DatePick from "../components/DatePicker/DatePicker";
 import GinBoardTable from "../components/Table/GinBoardTable";
 import '../components/css/Position.css'
 import TimePick from "../components/DatePicker/TimePicker1";
+
+import TestTable from "../components/Table/test";
+import Ap from "../components/Table/t";
+import Test from "../components/Table/test";
+
  
 class GinBoard extends React.Component{
     render(){
@@ -24,7 +29,11 @@ class GinBoard extends React.Component{
            
          </Row>
          <GinBoardTable />
+        
+       
          <br /> 
+         
+        <Test />
       </div>
         
         );

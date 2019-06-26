@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import { Table ,Icon ,Tag } from 'antd';
 import '../css/Position.css'
+const axios = require('axios');
+
 
 export const data = [
     {

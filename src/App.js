@@ -11,9 +11,7 @@ import ReportSummary from './page/ReportSummary';
 import GinRequestForm from './page/GinRequestForm';
 import AiForm from './components/Form/AiForm';
 import Login from './page/Login';
-
-
-
+import test from './components/Table/test';
 
 
 class App extends Component {
@@ -33,10 +31,13 @@ class App extends Component {
           <Route path='/GinRequestForm' component={GinRequestForm}/>
           <Route path='/AIForm' component={AiForm}/>
           <Route path='/Login' component={Login}/>
+         
+          <test />
 
           
         </div>
       </BrowserRouter>
+      
     );
   }
 }
