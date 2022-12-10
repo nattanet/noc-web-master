@@ -5,7 +5,7 @@
   "dependencies": {
     "antd": "^3.19.6",
     "axios": "^0.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mssql": "^5.1.0",
     "react": "^16.8.6",
     "react-datepicker": "^2.7.0",
